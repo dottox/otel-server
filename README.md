@@ -1,4 +1,4 @@
-# OpenTelemtry to Instana in EKS
+# OpenTelemetry to Instana in EKS
 
 Reqs:
 - Una instancia de Instana
