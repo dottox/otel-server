@@ -1,0 +1,20 @@
+apiVersion: instana.io/v1
+kind: InstanaAgent
+metadata:
+ name: instana-agent
+ namespace: instana-agent
+spec:
+ cluster:
+  name: <cluster-name>
+ agent:
+  key: <agent-key>
+  downloadKey: <agent-key>
+  endpointHost: ingress-pumpkin-saas.instana.io
+  endpointPort: "443"
+  env: {}
+  configuration_yaml: |
+    com.instana.plugin.opentelemetry:
+      grpc:
+        port: 4317
+      http:
+        port: 4318

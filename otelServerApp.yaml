@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: otel-server
+  labels:
+    app: otel-server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: otel-server
+  template:
+    metadata:
+      labels:
+        app: otel-server
+    spec:
+      containers:
+        - name: otel-server
+          image: ghcr.io/dottox/otel-server:latest  # La imagen buildeada con el Dockerfile de ./app
+          ports:
+            - containerPort: 8082
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: otel-server
+  labels:
+    app: otel-server
+spec:
+  type: ClusterIP
+  selector:
+    app: otel-server
+  ports:
+    - protocol: TCP
+      port: 8082
+      targetPort: 8082

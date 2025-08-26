@@ -1,4 +1,0 @@
-opentelemetry-distro
-flask
-requests
-opentelemetry-exporter-otlp-proto-http
