@@ -11,6 +11,8 @@ EXPOSE 8082
 
 ENV OTEL_PYTHON_LOG_LEVEL=DEBUG
 
+RUN ["opentelemetry-bootstrap", "-a", "install"]
+
 CMD ["opentelemetry-instrument", \
     "--exporter_otlp_protocol", "http/protobuf", \
     "--traces_exporter", "otlp,console", \
