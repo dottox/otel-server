@@ -22,5 +22,5 @@ CMD ["opentelemetry-instrument", \
     "--traces_exporter", "otlp", \
     "--metrics_exporter", "otlp", \
     "--logs_exporter", "otlp", \
-    "--exporter_otlp_endpoint", "0.0.0.0:4317", \
+    "--exporter_otlp_endpoint", "0.0.0.0:4318", \
     "python", "server.py"]
