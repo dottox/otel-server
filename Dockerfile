@@ -18,9 +18,9 @@ EXPOSE 8082
 
 # Comando de arranque con OpenTelemetry instrumentation
 CMD ["opentelemetry-instrument", \
-     "--traces_exporter", "otlp", \
-     "--metrics_exporter", "otlp", \
-     "--logs_exporter", "otlp", \
-     "--exporter_otlp_protocol", "http/protobuf", \
-     "--exporter_otlp_endpoint", "0.0.0.0:4317", \
-     "python", "server_automatic.py"]
+    "--exporter_otlp_protocol", "http/protobuf", \
+    "--traces_exporter", "otlp", \
+    "--metrics_exporter", "otlp", \
+    "--logs_exporter", "otlp", \
+    "--exporter_otlp_endpoint", "0.0.0.0:4317", \
+    "python", "server_automatic.py"]
