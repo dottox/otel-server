@@ -87,6 +87,10 @@ Funciona mediante el monkey patching, cambiando el código en runtime para poder
 > Esto es necesario SOLO si la aplicación no se inicia con el auto-instrumentation.
 
 ```bash
+kubectl create namespace application
+```
+
+```bash
 kubectl apply -f otelInstrumentation.yaml
 ```
 

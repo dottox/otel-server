@@ -4,6 +4,7 @@ metadata:
   name: otel-server
   labels:
     app: otel-server
+  namespace: application
 spec:
   replicas: 3
   selector:
@@ -26,6 +27,7 @@ metadata:
   name: otel-server
   labels:
     app: otel-server
+  namespace: application
 spec:
   type: ClusterIP
   selector:
