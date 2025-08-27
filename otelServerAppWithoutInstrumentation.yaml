@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: otel-server
+  labels:
+    app: otel-server
+  namespace: application
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: otel-server
+  template:
+    metadata:
+      labels:
+        app: otel-server
+      annotations:
+        instrumentation.opentelemetry.io/inject-python: "true"
+    spec:
+      containers:
+        - name: otel-server
+          image: ghcr.io/dottox/otel-server-no-auto-instrumentation:latest  # La imagen buildeada con el Dockerfile de ./app-no-instrumented
+          ports:
+            - containerPort: 8082
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: otel-server
+  labels:
+    app: otel-server
+  namespace: application
+spec:
+  type: ClusterIP
+  selector:
+    app: otel-server
+  ports:
+    - protocol: TCP
+      port: 8082
+      targetPort: 8082
