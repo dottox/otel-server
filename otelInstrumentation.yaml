@@ -10,6 +10,8 @@ spec:
     - tracecontext
     - baggage
     - b3
+  sampler:
+    type: always_on # Para development, en producción usar parentbased_traceidratio
   python:
     env:
       # Required if endpoint is set to 4317.
