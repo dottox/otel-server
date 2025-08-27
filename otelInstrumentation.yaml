@@ -2,6 +2,7 @@ apiVersion: opentelemetry.io/v1alpha1
 kind: Instrumentation
 metadata:
   name: my-instrumentation
+  namespace: application
 spec:
   exporter:
     endpoint: http://simplest-collector.default.svc.cluster.local:4318
