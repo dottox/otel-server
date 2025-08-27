@@ -16,5 +16,7 @@ spec:
     com.instana.plugin.opentelemetry:
       grpc:
         port: 4317
+        host: 0.0.0.0
       http:
         port: 4318
+        host: 0.0.0.0
