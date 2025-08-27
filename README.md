@@ -28,8 +28,9 @@ curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 --------------------
 ## Instalar el operador del agente de Instana
 
-// Para agregar
-
+```bash
+kubectl apply -f https://github.com/instana/instana-agent-operator/releases/latest/download/instana-agent-operator.yaml
+```
 
 
 --------------------
